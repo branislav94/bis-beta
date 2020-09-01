@@ -38,10 +38,11 @@ const Progress = () => (
     <Timeline.Item color="green"> Kreirana tabela na stranici Stanari | 09-07-2020</Timeline.Item>
     <Timeline.Item color="green"> Kreirana tabela na stranici Stanari | 09-07-2020</Timeline.Item>
     <Timeline.Item color="red"> SideBarMenu problem with scrolling (not fixed) | 25-07-2020</Timeline.Item>
-    <Timeline.Item color="red"> Ažuriran Header | 25-07-2020</Timeline.Item>
+    <Timeline.Item color="green"> Ažuriran Header | 25-07-2020</Timeline.Item>
+    <Timeline.Item color="green"> Povezan sa bazom podataka (MongoDB) | 01-08-2020</Timeline.Item>
 
       <Timeline.Item dot={<ClockCircleOutlined style={{ fontSize: '16px' }} />}>
-        01-08-2020 | Tehničko testiranje Demo verzije
+        02-08-2020 | Tehničko testiranje Demo verzije
     </Timeline.Item>
     </Timeline>
   </SiderDemo>
