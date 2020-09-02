@@ -40,6 +40,8 @@ const Progress = () => (
     <Timeline.Item color="red"> SideBarMenu problem with scrolling (not fixed) | 25-07-2020</Timeline.Item>
     <Timeline.Item color="green"> Ažuriran Header | 25-07-2020</Timeline.Item>
     <Timeline.Item color="green"> Povezan sa bazom podataka (MongoDB) | 01-08-2020</Timeline.Item>
+    <Timeline.Item color="green"> Ažuriran Header (Logo) | 02-08-2020</Timeline.Item>
+
 
       <Timeline.Item dot={<ClockCircleOutlined style={{ fontSize: '16px' }} />}>
         02-08-2020 | Tehničko testiranje Demo verzije

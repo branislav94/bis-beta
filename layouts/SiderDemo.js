@@ -31,13 +31,21 @@ class SiderDemo extends React.Component {
   render() {
     return (
       <Layout>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <div className="logo" />
+        <Sider 
+        trigger={null} 
+        collapsible 
+        collapsed={this.state.collapsed}
+        >
+          <div className="logo">
+            <h1>S</h1>
+            {!this.state.collapsed && <h1>mart<strong>BIS</strong></h1>}
+          </div>
+
           <Menu theme="dark" mode="inline" selectedKeys={"1"}>
             <Menu.Item key="1" icon={<AppstoreOutlined />}>
               <Link href="/"><a>Početna</a></Link>
             </Menu.Item>
-            <Menu.Item key="2" icon={<TeamOutlined/>}>
+            <Menu.Item key="2" icon={<TeamOutlined />}>
               <Link href="/stanari"><a>Stanari</a></Link>
             </Menu.Item>
             {/* <Menu.Item key="3" icon={<UploadOutlined />}>
