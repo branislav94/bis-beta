@@ -15,7 +15,7 @@
     background: rgba(255, 255, 255, 0.2);
     margin: 16px;
   }
-    h1 {
+    .logo h1 {
       color: white;
       font-size: 2em;
     }
@@ -27,4 +27,8 @@
   .ant-layout-sider {
     height: 100vh;
 
+}
+
+h1, h2, p {
+  color: #1890ff;
 }

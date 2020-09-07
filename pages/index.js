@@ -1,10 +1,10 @@
-import { Form, Select, InputNumber, Switch, Slider, Button } from 'antd'
+import { Form, Select, Card, InputNumber, Switch, Slider, Button } from 'antd'
 
 // Custom DatePicker that uses Day.js instead of Moment.js
 // import DatePicker from '../components/DatePicker'
 import SiderDemo from '../layouts/SiderDemo'
 // import Layout from '../layouts/dashboard'
-// import { SmileFilled } from '@ant-design/icons'
+// import { Card} from '@ant-design/icons'
 
 // import Link from 'next/link'
 

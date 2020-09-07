@@ -1,89 +1,136 @@
+import { Table, Tag, Space, Card, Button } from 'antd';
+import Link from 'next/link';
+import fetch from 'isomorphic-unfetch'
+import dbConnect from '../../utils/dbConnect'
+import { UsergroupAddOutlined, UserOutlined } from '@ant-design/icons';
+
 import SiderDemo from "../../layouts/SiderDemo"
-import { Table, Tag, Space, Card } from 'antd';
+
+
 const { Column } = Table;
-
-
 
 const data = [
     {
+        key: "{stanar._id}",
+        firstName: `{stanar.stanar}`,
+        lastName: 'Hajnalka Balaž',
+        age: 32,
+        address: 'New York No. 1 Lake Park',
+        tags: ['nice', 'developer'],
+
+    },
+    {
         key: '1',
         firstName: 'Energo Balaž d.o.o.',
         lastName: 'Hajnalka Balaž',
         age: 32,
         address: 'New York No. 1 Lake Park',
         tags: ['nice', 'developer'],
-    },
-    {
-        key: '1',
-        firstName: 'Energo Balaž d.o.o.',
-        lastName: 'Hajnalka Balaž',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
-    },
-    {
-        key: '2',
-        firstName: 'Jim',
-        lastName: 'Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-        tags: ['loser'],
-    },
-    {
-        key: '3',
-        firstName: 'Joe',
-        lastName: 'Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        firstName: 'Joe',
-        lastName: 'Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-];
 
-const Stanari = () => (
-    <SiderDemo>
-        <Card style={{ width: 300 }}>
-            <p>{data.length}</p>
-            <p></p>
+    }
+]
 
-        </Card>
+const Stanari = ({ stanari }) => {
 
-        <Table dataSource={data}>
-            <Column title="Stanar" dataIndex="firstName" key="firstName" />
-            <Column title="Direktor" dataIndex="lastName" key="lastName" />
-            <Column title="Address" dataIndex="address" key="address" />
-            <Column
-                title="Tags"
-                dataIndex="tags"
-                key="tags"
-                render={tags => (
-                    <>
-                        {tags.map(tag => (
-                            <Tag color="blue" key={tag}>
-                                {tag}
-                            </Tag>
-                        ))}
-                    </>
-                )}
-            />
-            <Column
-                title="Action"
-                key="action"
-                render={(text, record) => (
-                    <Space size="middle">
-                        <a>Uredi {record.firstName}</a>
-                        <a>Obrisi</a>
-                    </Space>
-                )}
-            />
-        </Table>
-    </SiderDemo>
-)
+    return (
+        <SiderDemo>
+            {/* <div>
+                <h1 color="red">Stanari</h1>
+                <div>
+                    <Card><h1>Broj stanara: {stanari.length}</h1></Card>
+
+                    {stanari.map(stanar => {
+                        return (
+
+                            <Card key={stanar._id} style={{
+                                width: 300,
+                                display: "inline-flex"
+                            }}>
+                                <Link href={`/${stanar._id}`}>
+                                    <a>{stanar.stanar}</a>
+                                </Link>
+                                <p>{stanar.direktor}</p>
+                                <Link href={`/${stanar._id}`}>
+                                    <Button>View</Button>
+                                </Link>
+                            </Card>
+
+                        )
+                    })}
+                </div>
+            </div> */}
+
+            <Button ><UserOutlined /> Broj stanara: {stanari.length}</Button>
+            <Link href="stanari/new">
+                <Button type="primary"> <UsergroupAddOutlined />Dodaj novog stanara</Button>
+            </Link>
+            <Table dataSource={stanari}>
+                <Column title="Stanar" dataIndex="stanar" key="stanar" />
+                <Column title="Direktor" dataIndex="direktor" key="direktor" />
+                <Column title="Address" dataIndex="address" key="address" />
+                <Column
+                    title="Action"
+                    key="action"
+                    render={(text, record) => (
+                        <Space size="middle">
+                            <Link href={`/${record._id}`}>
+                                <a>View</a>
+                            </Link>
+                            <Link href={`/${record._id}/edit`}>
+                                <a>Edit</a>
+                            </Link>
+
+                        </Space>
+                    )}
+                />
+            </Table>
+
+
+
+
+
+
+            {/* <Table dataSource={data}>
+                <Column title="Stanar" dataIndex="firstName" key="firstName" />
+                <Column title="Direktor" dataIndex="lastName" key="lastName" />
+                <Column title="Address" dataIndex="address" key="address" />
+                <Column
+                    title="Tags"
+                    dataIndex="tags"
+                    key="tags"
+                    render={tags => (
+                        <>
+                            {tags.map(tag => (
+                                <Tag color="blue" key={tag}>
+                                    {tag}
+                                </Tag>
+                            ))}
+                        </>
+                    )}
+                />
+                <Column
+                    title="Action"
+                    key="action"
+                    render={(text, record) => (
+                        <Space size="middle">
+                            <a>Uredi {record.firstName}</a>
+                            <a>Obrisi</a>
+                        </Space>
+                    )}
+                />
+            </Table> */}
+        </SiderDemo>
+    )
+
+}
+
+Stanari.getInitialProps = async () => {
+    const res = await fetch('http://localhost:3000/api/stanari');
+    const { data } = await res.json();
+
+    return { stanari: data }
+}
+
+
 export default Stanari;
+

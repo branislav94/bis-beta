@@ -19,7 +19,12 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "mongoose": "^5.9.13",
-    "swr": "0.2.2"
+    "swr": "0.2.2",
+    "isomorphic-unfetch": "^3.0.0",
+    "axios": "^0.18.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2"
+
   },
   "browser": {
     "fs": false,
