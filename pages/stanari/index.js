@@ -125,7 +125,7 @@ const Stanari = ({ stanari }) => {
 }
 
 Stanari.getInitialProps = async () => {
-    const res = await fetch('https://localhost:3000/api/stanari');
+    const res = await fetch('/api/stanari');
     const { data } = await res.json();
 
     return { stanari: data }
