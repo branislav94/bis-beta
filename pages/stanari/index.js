@@ -125,7 +125,7 @@ const Stanari = ({ stanari }) => {
 }
 
 Stanari.getInitialProps = async () => {
-    const res = await fetch('http://bis-beta.vercel.app/api/stanari');
+    const res = await fetch('https://bis-beta.vercel.app/api/stanari');
     const { data } = await res.json();
 
     return { stanari: data }
