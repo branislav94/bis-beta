@@ -66,8 +66,8 @@ const Stanari = ({ stanari }) => {
             </Link>
             <Table dataSource={stanari}>
                 <Column title="Stanar" dataIndex="stanar" key="stanar" />
-                <Column title="Direktor" dataIndex="direktor" key="direktor" />
-                <Column title="Address" dataIndex="address" key="address" />
+                <Column className="m-hide" title="Direktor" dataIndex="direktor" key="direktor" />
+                <Column className="m-hide" title="Address" dataIndex="address" key="address" />
                 <Column
                     title="Action"
                     key="action"
@@ -125,7 +125,7 @@ const Stanari = ({ stanari }) => {
 }
 
 Stanari.getInitialProps = async () => {
-    const res = await fetch('/api/stanari');
+    const res = await fetch('http://localhost:3000/api/stanari');
     const { data } = await res.json();
 
     return { stanari: data }

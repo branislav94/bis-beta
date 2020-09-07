@@ -86,7 +86,7 @@ const NewStanar = () => {
                                 onChange={handleChange}
                             />
                             <Form.TextArea
-                                fluid
+                                fluid="true"
                                 label='Direktor'
                                 placeholder='Direktor'
                                 name='direktor'
