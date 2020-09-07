@@ -9,26 +9,26 @@ import SiderDemo from "../../layouts/SiderDemo"
 
 const { Column } = Table;
 
-const data = [
-    {
-        key: "{stanar._id}",
-        firstName: `{stanar.stanar}`,
-        lastName: 'Hajnalka Balaž',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
+// const data = [
+//     {
+//         key: "{stanar._id}",
+//         firstName: `{stanar.stanar}`,
+//         lastName: 'Hajnalka Balaž',
+//         age: 32,
+//         address: 'New York No. 1 Lake Park',
+//         tags: ['nice', 'developer'],
 
-    },
-    {
-        key: '1',
-        firstName: 'Energo Balaž d.o.o.',
-        lastName: 'Hajnalka Balaž',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
+//     },
+//     {
+//         key: '1',
+//         firstName: 'Energo Balaž d.o.o.',
+//         lastName: 'Hajnalka Balaž',
+//         age: 32,
+//         address: 'New York No. 1 Lake Park',
+//         tags: ['nice', 'developer'],
 
-    }
-]
+//     }
+// ]
 
 const Stanari = ({ stanari }) => {
 
@@ -125,7 +125,7 @@ const Stanari = ({ stanari }) => {
 }
 
 Stanari.getInitialProps = async () => {
-    const res = await fetch('http://localhost:3000/api/stanari');
+    const res = await fetch('https://localhost:3000/api/stanari');
     const { data } = await res.json();
 
     return { stanari: data }

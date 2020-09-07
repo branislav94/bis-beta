@@ -25,7 +25,7 @@ const NewStanar = () => {
 
     const createNote = async () => {
         try {
-            const res = await fetch('http://localhost:3000/api/stanari', {
+            const res = await fetch('https://localhost:3000/api/stanari', {
                 method: 'POST',
                 headers: {
                     "Accept": "application/json",
