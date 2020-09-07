@@ -60,9 +60,13 @@ const Stanari = ({ stanari }) => {
                 </div>
             </div> */}
 
-            <Button ><UserOutlined /> Broj stanara: {stanari.length}</Button>
+            <Button   style={{
+              margin: "0 20px 20px 0"
+            }}><UserOutlined /> Broj stanara: {stanari.length}</Button>
             <Link href="stanari/new">
-                <Button type="primary"> <UsergroupAddOutlined />Dodaj novog stanara</Button>
+                <Button style={{
+              margin: "0 20px 20px 0"
+            }} type="primary"> <UsergroupAddOutlined />Dodaj novog stanara</Button>
             </Link>
             <Table dataSource={stanari}>
                 <Column title="Stanar" dataIndex="stanar" key="stanar" />
